@@ -1,0 +1,5 @@
+{% for album in all_album %}
+	{% for so in album.song_set.all %}
+		{{song.song_title}}
+	{% endfor %}
+{% endfor %}

@@ -1,0 +1,22 @@
+{% extends 'music/base.html' %}
+
+
+{% block body %}<center>
+<img src="{{album.album_logo}}" style = "width : 325px;"></center>
+
+<h1>
+<font face="Showcard Gothic" color="94F114" size="7"><center>{{album.album_title}}</center></font></h1>
+
+<h3><font face="Snap ITC" color="D803FE" size="6"><center>{{album.artist}}</center></font></h3>
+
+
+
+	{% for song in album.song_set.all %}
+		<center><font face="Comic Sans MS" color="F6FE03" size="5"><B>{{song.song_title}}<B></font></center>
+		{% if song.is_favorite %}
+			<img src="http://i.imgur.com/b9b13Rd.png"/>
+		{% endif %}
+	<br>
+	{% endfor %}
+	
+{% endblock %}	

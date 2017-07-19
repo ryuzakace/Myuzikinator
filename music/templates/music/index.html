@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+
+<html>
+<meta charset ="UTF-8">
+{% extends 'music/base.html' %}
+
+<body link = "f0e9fe" vlink="f0e9fe">
+
+{% block body %}
+
+
+
+{% if all_albums %}
+	<strong style="color:#bed0fa;font-size:32px">PlayLists</strong><br><br>
+	
+		{% for album in all_albums %}
+			
+
+			<h3><a style = "color:#f9c3fc" href="{% url 'music:detail' album.id %}"><img src="{{album.album_logo}}" alt="Loading..." style = "width : 250px; border:5px solid lightblue; border-radius: 15px;"">      {{ album.album_title}}-{{album.artist}}</a></h3>
+		{% endfor %}
+	
+{% else %}
+	<h3> You don't have any albums </h3>
+{% endif %} 
+
+{% endblock %}	
+
+</body>
+</html>
